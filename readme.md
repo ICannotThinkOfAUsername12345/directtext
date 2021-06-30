@@ -13,6 +13,7 @@ If you do not specify a filename on starting the program, it will ask you to for
 ### Commands
 Syntax
 > `[character][arguments]`
+
 For now, the commands are:
 * `L[line]`: Enter a line to the end of the file.
 * `C`: See what lines you have entered so far.
