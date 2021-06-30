@@ -43,6 +43,7 @@ int main(int argc, char *argv[]){
 				for(i=0; i<s; i++){
 					cout << lines[i] << endl;
 				}
+				break;
 			case 'W':
 				//Write
 				if(!fileOpened){
@@ -54,6 +55,7 @@ int main(int argc, char *argv[]){
 				for(int i = 0;i < s;i++){
 					f << lines[i] << endl;
 				}
+				break;
 			default:
 				break;
 		}
