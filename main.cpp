@@ -47,14 +47,15 @@ int main(int argc, char *argv[]){
 			case 'W':
 				//Write
 				if(!fileOpened){
-					cout << "Where do you want to write? ";
-					cin.get(fname, 255);
+					cout << "Where do you want to write? " << endl;
+					scanf("%256s", fname);
 					filename = fname;
 				}
 				f.open(filename);
 				for(int i = 0;i < s;i++){
 					f << lines[i] << endl;
 				}
+				cout << "Written to " << filename << endl;
 				break;
 			default:
 				break;
@@ -65,6 +66,7 @@ int main(int argc, char *argv[]){
 	if(fileOpened){
 		f.close();
 	}
+
 
 	return 0;
 }
