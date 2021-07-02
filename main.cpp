@@ -1,12 +1,27 @@
 #include <iostream>
+#include <cstdio>
 #include <fstream>
 #include <limits>
 #include <vector>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
 vector<string> lines;
+
+void readFile(char* name){
+	FILE *fp;
+	char data[1000];
+	fp = fopen(name, "r");
+	fseek(fp, 0L, SEEK_END);
+	long sz = ftell(fp);
+	rewind(fp);
+	fread(data, sz, sizeof(char), fp);
+	data[sz] = '\0';
+	cout << data << endl;
+	return;
+}
 
 int main(int argc, char *argv[]){
 	char buffer[100];
@@ -40,8 +55,14 @@ int main(int argc, char *argv[]){
 				break;
 			case 'C':
 				//Cat
-				for(i=0; i<s; i++){
-					cout << lines[i] << endl;
+				if(strlen(buffer) > 2){
+					//Read an external file
+					readFile(buffer+2);
+				}else{
+					//Read the contents of the file
+					for(i=0; i<s; i++){
+						cout << lines[i] << endl;
+					}
 				}
 				break;
 			case 'W':

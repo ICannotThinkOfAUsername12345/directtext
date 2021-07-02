@@ -15,7 +15,10 @@ Syntax
 > `[character][arguments]`
 
 For now, the commands are:
-* `L[line]`: Enter a line to the end of the file.
-* `C`: See what lines you have entered so far.
+* `L`: Line
+  * `L[line]`: Enter a line to the end of the file.
+* `C`: Cat
+  * `C`: See what lines you entered so far.
+  * `C [filename]`: Look at the content of another file for reference.
 * `W`: Write out to a file
 * `X`: Exit the program
