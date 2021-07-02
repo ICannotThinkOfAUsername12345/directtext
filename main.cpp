@@ -47,15 +47,18 @@ int main(int argc, char *argv[]){
 			case 'W':
 				//Write
 				if(!fileOpened){
-					cout << "Where do you want to write? " << endl;
+					cout << "Where do you want to write? ";
 					scanf("%256s", fname);
-					filename = fname;
 				}
-				f.open(filename);
+				f.open(fname);
 				for(int i = 0;i < s;i++){
 					f << lines[i] << endl;
 				}
-				cout << "Written to " << filename << endl;
+				if(f.fail()){
+					cout << "Error writing to " << fname << endl;
+				}else{
+					cout << "Successfully written to " << fname << endl;
+				}
 				break;
 			default:
 				break;
